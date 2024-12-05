@@ -1,0 +1,1 @@
+export const country_state="https://countriesnow.space/api/v0.1/countries";
