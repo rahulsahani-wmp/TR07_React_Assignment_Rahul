@@ -1,99 +1,61 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-
+.todo_main_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--todo-gap); 
+    padding: 10%;
+    background-color: var(--todo-bg-color);
 }
-.font{ font-size: 20px;
-    font-weight: 1000;
-     }
 
-.container{
-    background-color: var(--bs-cyan);
-   border: 3px solid var(--bs-primary);
-   border-radius: 20px;
-   display: flex;
-   flex-direction: column;
-   gap: 50px;
-   padding: 30px;
-   
+.todo_input {
+    width: 100%;
+    display: flex;
+    gap: var(--input-gap);
 }
-.todo_container{
-    display: flex; 
-    gap: 20px;
-    justify-content: space-around;
+
+.todo_input input {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.todo_filter {
+    display: flex;
+    gap: var(--filter-gap);
+    border-radius: var(--border-radius);
+}
+
+.todo_filter button {
+    flex: 1;
+    border-radius: var(--border-radius);
+}
+
+.todo_container {
+    display: flex;
     align-items: center;
-}
-.todo_input{
-   
-    display: flex;
-   justify-content: center;
-   
-}
-.task_input{
-    border: 3px solid var(--bs-primary);
-    border-radius: 10px;
-}
-.todo_input form{
-   
-   display: flex;
-   justify-content: center;
-   gap: 20px;
-   
-}
-.todo_filter{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.todo_filter button{
-    width: 30%;
-    padding: 10px;
-    background-color: var(--bs-blue);
-    border-radius: 20px;
-}
-.todo_filter button:active {
-    background-color: var(--bs-yellow); /* Color when button is clicked */
-  }
-.delete_btn {
-    background-color: var(--bs-danger);
-    border-radius: 10px;
-    padding: 3px;
-}
-.addtask_btn{
-background-color: var(--bs-green);
-height: 40px;
-padding: 10px;
-border-radius: 10px;
-
-}
-.todo_container{
-    background-color: var(--bs-white);
-    height: 50px;
-    border-radius: 20px;
-  
-
-}
-.todo_checkbox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Add some padding or margin if needed */
+    border: 2px solid var(--todo-container-border-color);
+    padding: var(--todo-container-padding);
+    border-radius: var(--border-radius);
+    background-color: var(--todo-container-bg-color);
 }
 
-/* Style the checkbox input */
-.todo_checkbox input[type="checkbox"] {
-
-  width: 24px; /* Adjust size as needed */
-  height: 24px; /* Adjust size as needed */
-  border-radius: 50%; /* Circular shape */
- 
-  position: relative;
-  cursor: pointer;
-
-}
-
-.filter_message{
+.todo_name {
+    flex: 1;
     text-align: center;
+}
+
+.filter_message {
+    text-align: center;
+}
+
+button {
+    height: var(--button-height); 
+    border-radius: var(--border-radius);
+}
+
+.addtask_btn {
+    white-space: nowrap;
+}
+
+.checkbox {
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
 }

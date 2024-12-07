@@ -1,0 +1,26 @@
+.card_container {
+    display: flex;
+    justify-content: center;
+}
+
+.button_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button_container button {
+    min-width: 30%;
+    padding: var(--button-padding); 
+    font-size: var(--button-font-size); 
+    font-weight: var(--font-weight-bold);
+    background-color: var(--button-bg-color);
+}
+
+.main_Container {
+    padding: var(--main-container-padding, 10%); 
+}
+
+.card-title {
+    font-size: var(--card-title-font-size); 
+}

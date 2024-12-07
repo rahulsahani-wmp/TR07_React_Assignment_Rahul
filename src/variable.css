@@ -1,0 +1,38 @@
+:root {
+    /* Define color variables */
+    --background-color: #FFF6E9;
+    --header-bg-color: #FFF7D1;
+    --nav-link-color: #8B5DFF;
+    --h1-color: #563A9C;
+    --card-bg-color: #F5EFFF;
+    --form-select-bg-color: #E5D9F2;
+    --nav-link-border-color: #563A9C;
+    --button-bg-color: #563A9C;
+    --todo-bg-color: #EBEAFF;
+    --todo-container-bg-color: #8B5DFF;
+    --todo-container-border-color: #9694FF;
+
+    /* Font and Typography */
+    --font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    --font-weight-bold: 1000;
+  
+
+    /* Spacing Variables */
+    --padding-card: 30px;
+    --navbar-padding: 0px;
+    --main-container-padding: 10%;
+    --input-gap: 10px;
+    --todo-gap: 50px;
+    --filter-gap: 10px;
+    --button-height: 50px;
+    --checkbox-size: 30px;
+    --todo-container-padding: 10px 10px;
+
+    /* Border Radius */
+    --border-radius: 10px;
+
+    /* Font Size Variables */
+    --h1-font-size: 40px;
+    --card-title-font-size: large;
+    --button-font-size: large;
+}

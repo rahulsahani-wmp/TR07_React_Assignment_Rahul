@@ -1,22 +1,27 @@
 
-import './App.css';
+
 import Header from './Componenets/header';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Country_City_selector from './Domain/State-Country-Selector';
-// import Country_City_selector from './Domain/State-Country-Selector';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CountryCityselector from './Domain/State-Country-Selector';
 import ToDo from './Domain/Todo';
+import Postselector from './Domain/Post-Selector';
+import Home from './Componenets/home';
+import './variable.css'
+import './App.css';
 
 function App() {
   return (
     <>
-     <Router>
-      <Header />
-      {/* Your other components or Routes */}
-    </Router>
-    {/* <Country_City_selector/> */}
-   
+    <BrowserRouter>
+        <Header />
+        <Routes>
+        <Route path="/" element={<Home/>}></Route>
+          <Route path="/todo" element={<ToDo/>}></Route>
+          <Route path="/countrystateselector" element={<CountryCityselector/>}></Route>
+          <Route path="/postselector" element={<Postselector/>}></Route>
 
-    {/* <ToDo/> */}
+        </Routes>
+      </BrowserRouter>
 
     </>
   );

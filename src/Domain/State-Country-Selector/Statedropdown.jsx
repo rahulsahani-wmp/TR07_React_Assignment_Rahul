@@ -8,30 +8,30 @@ function StateDropdown({ apidata, setSelectedState, selectedCountry }) {
     if (selectedCountry) {
       setSelectedState(""); //remove previos stored data of selectstate
       const country = apidata.find(
-        (country) => country.name === selectedCountry
+        (country) => country.country === selectedCountry
       );
-      setstatedata(country.states); // Set states or empty array
+      setstatedata(country.cities); // Set states or empty array if state not available
     }
   }, [selectedCountry]); // Watch for changes to selectedCountry
 
-  const handleStateChange = (event) => {
+  const handlestatechange = (event) => {
     setSelectedState(event.target.value); // Update selected state
   };
 
   return (
-    <div className="dropdown-container">
-      {console.log("selectedCountry:", selectedCountry)}
-      {console.log(statedata)}
-      <label htmlFor="state-dropdown">Select State:</label>
-      <select id="state-dropdown" onChange={handleStateChange}>
-        <option value="">-- Select a State --</option>
-        {statedata.map((state, index) => (
-          <option key={index} value={state.name}>
-            {state.name}
-          </option>
-        ))}
-      </select>
-    </div>
+    <div>
+    
+    <select className="form-select p-4"  aria-label="Default select example" onChange={handlestatechange}>
+      <option>Select a State</option>
+
+     {statedata.length>0?(statedata.map((state)=>(
+      <option key={state}  value={state}
+      >{state}</option>
+     ))):( <option value="" disabled>
+      No States available
+    </option>)}
+    </select>
+  </div>
   );
 }
 

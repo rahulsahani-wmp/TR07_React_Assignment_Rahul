@@ -1,0 +1,53 @@
+body {
+  background-color: var(--background-color);
+}
+
+/* Header CSS */
+.container-fluid {
+  background-color: var(--header-bg-color);
+}
+
+.navbar {
+  padding: var(--navbar-padding) !important;
+}
+
+/* Navbar font styles */
+.nav-link {
+  color: var(--nav-link-color);
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Common component styles */
+h1 {
+  color: var(--h1-color);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  font-size: var(--h1-font-size);
+}
+
+.card {
+  text-align: center;
+  background-color: var(--card-bg-color);
+  padding: var(--padding-card);
+}
+
+.form-select {
+  background-color: var(--form-select-bg-color);
+}
+
+/* Home page */
+.home_page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Media query for navigation */
+@media screen and (max-width: 978px) {
+  .nav-link {
+    border: 2px solid var(--nav-link-border-color);
+    border-radius: 15px;
+  }
+}

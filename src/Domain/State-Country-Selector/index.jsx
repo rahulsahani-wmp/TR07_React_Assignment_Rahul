@@ -1,56 +1,47 @@
 import { useEffect, useState } from "react";
-import axios from "axios"; // Make sure Axios is imported
+
 import CountryDropdown from "./Countrydropdown";
 import StateDropdown from "./Statedropdown";
+import Displayselection from "./Displayselection";
+import "./index.css";
+import { getCountryStateData } from "../../Services/apiServices";
 
-function Country_City_selector() {
-  // Country definitions
-  const [apidata, setapidata] = useState(null); // Initialize with null
+
+function CountryCityselector() {
+ 
+  const [apidata, setapidata] = useState(null); // load api data 
   const [selectedCountry, setSelectedCountry] = useState(""); // For selected Country
   const [selectedState, setSelectedState] = useState(""); // For selected city
-  const [displayselection, setdisplayselection] = useState(false);
+  const [displayselection, setdisplayselection] = useState(false); //for rendering display selection
 
   // Function to fetch data
-  async function getCountryStateData() {
-    try {
-      const response = await axios.get(
-        "https://countriesnow.space/api/v0.1/countries/states"
-      );
-      console.log("API Data:", response.data.data);
-      return response.data.data;
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      return null; // Return null on error
-    }
-  }
+ 
 
-  // Effect to load data on mount
+  // Effect to load data 
   useEffect(() => {
     getCountryStateData().then((res) => {
+      // console.log("response",res)
       setapidata(res);
     });
   }, []);
 
+  //use effect to handle display selection
   useEffect(() => {
     setdisplayselection(false);
   }, [selectedState, selectedCountry]);
 
+
   function handleselection() {
     if (selectedState === "") {
-      alert("please select both city and country");
+      alert("Please Select Both State and Country");
     } //handle submit click issue
     else setdisplayselection(true);
   }
-  // Debugging and checking Countrys (this runs after apidata is updated)
-  useEffect(() => {
-    if (apidata) {
-      console.log("apidata updated:", apidata);
-    }
-  }, [apidata]); // This effect will trigger every time apidata changes
 
   return (
     <>
-      hellooo again
+    <div className=" main_Container d-flex gap-3 flex-column">
+      <h1>Country State Selector</h1>
       {apidata && (
         <CountryDropdown
           apidata={apidata}
@@ -64,10 +55,16 @@ function Country_City_selector() {
           selectedCountry={selectedCountry}
         />
       )}
-      <button onClick={handleselection}>Submit</button>
-      {displayselection && <p>hello</p>}
+      <div className="button_container">
+      <button type="button" className="btn btn-primary "  onClick={handleselection}>Submit</button>
+      </div>
+      <div className="card_container">
+    {displayselection && (<Displayselection  selectedCountry={selectedCountry} selectedState={selectedState}/>)}
+    </div>
+    </div>
+   
     </>
   );
 }
 
-export default Country_City_selector;
+export default CountryCityselector;

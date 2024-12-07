@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom';
+import logo from '../images/logo192.png'
 
 function Header() {
   return (
     <>
       <link rel="stylesheet" href="" />
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-white ">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">Navbar</Link>
+          <Link className="navbar-brand" to="/"><img
+              src={logo}
+              alt="Logo"
+              style={{ height: '90px', width: '90px', padding: '10px' }}
+            /></Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -19,23 +24,24 @@ function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav d-flex justify-content-end gap-4 w-100 ">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                <Link className="nav-link  fs-2 " aria-current="page" to="/todo">TODO</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/features">Features</Link>
+                <Link className="nav-link  fs-2 " to="/countrystateselector">Country-State Selector</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/pricing">Pricing</Link>
+              <li className="nav-item ">
+                <Link className="nav-link  fs-2 " to="/postselector">Post Selector</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link disabled" aria-disabled="true" to="#">Disabled</Link>
-              </li>
+              
             </ul>
           </div>
         </div>
       </nav>
+      <div>
+        <h1></h1>
+      </div>
     </>
   );
 }
