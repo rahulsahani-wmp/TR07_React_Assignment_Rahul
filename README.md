@@ -15,8 +15,8 @@ This project is a React-based application designed to manage tasks efficiently w
 
 ### Clone the repository
 ```bash
-  git clone https://github.com/rahulsahani-wmp/React_Assignment_Rahul
-  cd React_Assessment_Rahul
+  git clone https://github.com/rahulsahani-wmp/TR07_React_Assignment_Rahul.git
+  cd TR07_React_Assignment_Rahul
 ```
 
 ### Install dependencies

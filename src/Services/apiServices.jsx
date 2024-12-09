@@ -1,15 +1,15 @@
-import axios from "axios";
 
-import { country_stateurl, postsurl } from "../Utils/apiUrl";
+import { countrystateClient, postsClient } from "./apiInterceptor";
 
 //fetching country state data
 export async function getCountryStateData() {
   try {
-    const response = await axios.get(country_stateurl);
+    const response = await countrystateClient.get('/countries');
 
     return response.data.data;
   } catch (error) {
     console.error("Error fetching data:", error);
+    alert(error)
     return null; // Return null on error
   }
 }
@@ -17,11 +17,11 @@ export async function getCountryStateData() {
 //fetching post data
 export async function getpostsData() {
   try {
-    const response = await axios.get(postsurl);
-    
+    const response = await postsClient.get('/posts');
     return response.data;
   } catch (error) {
     console.error("Error fetching data:", error);
+    alert(error)
     return null; // Return null on error
   }
 }
